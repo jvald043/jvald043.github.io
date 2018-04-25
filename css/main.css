@@ -2,3 +2,31 @@
 
 
 
+
+/*NavBar*/
+.navbar{
+	 background:#F97300;
+}
+
+
+
+.nav-link , .navbar-brand{
+}
+.nav-link{
+}
+
+.nav-link:hover{
+
+}
+
+.navbar-toggler{
+}
+
+
+/*header style*/
+.header{
+ background-image: url('../images/peruback.jpg');
+ background-attachment: fixed;
+ background-size: cover;
+ background-position: center;
+}
