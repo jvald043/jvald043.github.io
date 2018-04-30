@@ -5,7 +5,7 @@
 
 /*NavBar*/
 .navbar{
-	 background:#F97300;
+	background:#F97300;
 }
 
 
@@ -25,8 +25,35 @@
 
 /*header style*/
 .header{
- background-image: url('../images/peruback.jpg');
- background-attachment: fixed;
- background-size: cover;
- background-position: center;
+	background-image: url('../images/peruback.jpg');
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+.overlay{
+ position: absolute;
+ min-height: 100%;
+ min-width: 100%;
+ left: 0;
+ top: 0;
+ background: rgba(244, 244, 244, 0.25);
+}
+
+.description{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+.description h1{
+}
+.description p{
+ color:#666;
+ font-size: 20px;
+ width: 50%;
+ line-height: 1.5;
+}
+.description button{
+
 }
