@@ -23,11 +23,11 @@
 </script>
 <title>Ivet and Jonathan Wedding</title>
 </head>
-<body>
+<body data-spy="scroll" data-target='#jvnav'>
 
 	<!-- navbar -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-		<a class="navbar-brand" href="#">Home</a>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="jvnav">
+		<a class="navbar-brand" href="#home">Ivet and Jonathan</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarItems" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
 			<i class="fas fa-plane"></i>
 		</button>
@@ -36,20 +36,16 @@
 			<ul class="navbar-nav mr-4">
 
 				<li class="nav-item">
-					<a class="nav-link" data-value="about" href="#">About</a>
+					<a class="nav-link" data-value="about" href="#about">About</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " data-value="portfolio" href="#">Portfolio</a>
+					<a class="nav-link " data-value="blog" href="#blog">Blog</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " data-value="blog" href="#">Blog</a>
+					<a class="nav-link " data-value="team" href="#team">Team</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link " data-value="team" href="#">
-					Team</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link " data-value="contact" href="#">Contact</a>
+					<a class="nav-link " data-value="contact" href="#contact">Contact</a>
 				</li>
 			</ul>
 
@@ -96,45 +92,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- portfolio -->
-	<div class="portfolio" id="portfolio">
-		<h1 class="text-center">Portfolio</h1>
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/port13.png" class="img-fluid">
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/port1.png" class="img-fluid">
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/port6.png" class="img-fluid">
-				</div>
-
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/port3.png" class="img-fluid">
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/port11.png" class="img-fluid">
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/electric.png" class="img-fluid">
-				</div>
-
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/Classic.jpg" class="img-fluid">
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/port1.png" class="img-fluid">
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-12">
-					<img src="images/portfolio/port8.png" class="img-fluid">
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<!-- Posts section -->
 	<div class="blog" id="blog">
@@ -239,7 +196,7 @@
 	<!-- Contact form -->
 	<div class="contact-form" id="contact">
 		<div class="container">
-			<form>
+			<form action="https://formcarry.com/s/ryNhjXv0z" method="POST" accept-charset="UTF-8" >
 				<div class="row">
 					<div class="col-lg-4 col-md-4 col-sm-12">
 						<h1>Get in Touch</h1>	
@@ -252,11 +209,10 @@
 							<input type="email" class="form-control form-control-lg" placeholder="YourEmail@email.com" name="email">
 						</div>
 						<div class="form-group">
-							<textarea class="form-control form-control-lg">
-
-							</textarea>
+							<textarea class="form-control form-control-lg"></textarea>
 						</div>
-						<input type="submit" class="btn btn-secondary btn-block" value="Send" name="">
+						<input type="hidden" name="_gotcha">
+						<input type="submit" class="btn btn-secondary btn-block" name="">
 					</div>
 				</div>
 			</form>

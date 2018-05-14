@@ -13,6 +13,5 @@ $(".navbar a, #smore").click(function(){
 })
 
 
-
-
 //Main Javascript
+$('body').scrollspy({ target: '#jvnav' })
