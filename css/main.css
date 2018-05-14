@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+/*
+AA BLUE #447EB5
+AA RED #CE102D
+*/
+
 
 body{
 	padding: 0;
@@ -6,29 +11,40 @@ body{
 	background:#f4f4f4;
 }
 html,h1,h2,h3,h4,h5,h6,a{
-	font-family: "Raleway";
+	font-family: "Open Sans";
 }
+
+
 .navbar{
-	background:#447EB5;
+	background:#447EB5 !important;
 }
+
+/*
 .nav-link , .navbar-brand{
 	color: #f4f4f4;
 	cursor: pointer;
 }
+*/
 .nav-link{
 	margin-right: 1em !important;
 }
+
+/*
 .nav-link:hover{
 	background: #f4f4f4;
-	color: #f97300;
+	color: #CE102D;
 
 }
+*/
 .navbar-collapse{
  justify-content: flex-end;
 }
+
+/*
 .navbar-toggler{
   background:#fff !important;
-}
+}*/
+
 
 /*header style*/
 .header{
@@ -54,7 +70,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 
 }
 .description h1{
-	color:#F97300 ;
+	color:#CE102D ;
 }
 .description p{
 	color:#666;
@@ -63,8 +79,8 @@ html,h1,h2,h3,h4,h5,h6,a{
 	line-height: 1.5;
 }
 .description button{
-	border:1px  solid #F97300;
-	background:#F97300;
+	border:1px  solid #CE102D;
+	background:#CE102D;
 	color:#fff;
 }
 .about{
@@ -73,7 +89,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 	position: relative;
 }
 .about h1{
-	color:#F97300;
+	color:#CE102D;
 	margin: 2em;
 }
 .about img{
@@ -89,10 +105,10 @@ html,h1,h2,h3,h4,h5,h6,a{
 }
 .about .desc{
 	padding: 2em;
-	border-left:4px solid #10828C;
+	border-left:4px solid #447EB5;
 }
 .about .desc h3{
-	color: #10828C;
+	color: #447EB5;
 }
 .about .desc p{
 	line-height:2;
@@ -106,7 +122,7 @@ html,h1,h2,h3,h4,h5,h6,a{
     position: relative;	
 }
 .portfolio h1{
-	color:#F97300;
+	color:#CE102D;
 	margin: 2em;	
 }
 .portfolio img{
@@ -125,7 +141,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 	position: relative;	
 }
 .blog h1{
-	color:#F97300;
+	color:#CE102D;
 	margin: 2em;	
 }
 .blog .card{
@@ -141,7 +157,7 @@ html,h1,h2,h3,h4,h5,h6,a{
  }	
 }
 .blog .card-title{
-	color:#F97300;
+	color:#CE102D;
 	 
 }
 .blog .card-body{
@@ -153,7 +169,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 
 }
 .team h1{
-	color:#F97300;
+	color:#CE102D;
 	margin: 2em;	
 }
 .team .item{
@@ -161,7 +177,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 	overflow: hidden;	
 }
 .team .des{
-	background: #F97300;
+	background: #CE102D;
 	color: #fff;
 	text-align: center;
 	border-top-right-radius: 93%;
@@ -174,7 +190,7 @@ html,h1,h2,h3,h4,h5,h6,a{
 }
 .team .item:hover .des{
 	height: 100%;
-	background:#f973007d;
+	background:#CE102D7d;
     position: absolute;
 	width: 89%;
 	padding: 5em;
@@ -188,13 +204,13 @@ html,h1,h2,h3,h4,h5,h6,a{
 
 .contact-form h1{
 	padding:2em 1px;
-	color: #F97300; 
+	color: #CE102D; 
 }
 .contact-form .right{
 	max-width: 600px;
 }
 .contact-form .right .btn-secondary{
-	background:  #F97300;
+	background:  #CE102D;
 	color: #fff;
 	border:0;
 }
