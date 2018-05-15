@@ -18,6 +18,7 @@ a:hover {
   color: #CE102D;
 }
 
+
 .text-primary {
   color: #447EB5 !important;
 }
@@ -91,6 +92,9 @@ section h3.section-subheading {
   background: #447EB5;
   text-shadow: none;
 }
+
+
+
 
 img::selection {
   background: transparent;
