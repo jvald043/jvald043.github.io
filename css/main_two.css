@@ -86,11 +86,13 @@ section h3.section-subheading {
 ::-moz-selection {
   background: #447EB5;
   text-shadow: none;
+  color: white
 }
 
 ::selection {
   background: #447EB5;
   text-shadow: none;
+  color: white
 }
 
 
