@@ -18,6 +18,18 @@ a:hover {
   color: #CE102D;
 }
 
+a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
 
 .text-primary {
   color: #447EB5 !important;
