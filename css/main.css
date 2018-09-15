@@ -215,19 +215,23 @@ header.masthead .intro-text .intro-lead-in {
 }
 
 
-.intro-lead-in {
-
-}
-
 header.masthead .intro-text .intro-heading {
   font-size: 50px;
   font-weight: 700;
-  line-height: 50px;
   margin-bottom: 25px;
   /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
 
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+@media (max-width: 768px) {
+    header.masthead .intro-text .intro-lead-in {
+      margin-top: 100px;
+      margin-bottom: 10px;
+
+}
+
+
 
 @media (min-width: 768px) {
   header.masthead .intro-text {
