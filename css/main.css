@@ -134,8 +134,10 @@ img::-moz-selection {
 }
 
 #mainNav .navbar-brand {
-  color: #447EB5;
+  color:  #D4AF37;
   font-family: 'Meddon', 'Helvetica Neue', Helvetica, Arial, cursive;
+  text-shadow: 1px 1px 2px #000;
+
 }
 
 #mainNav .navbar-brand.active, #mainNav .navbar-brand:active, #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
@@ -188,7 +190,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/about/mario.jpg");
+  background-image: url("../img/about/backgroundpic.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -208,7 +210,13 @@ header.masthead .intro-text .intro-lead-in {
   /*font-style: italic;*/
   line-height: 22px;
   margin-bottom: 25px;
+  margin-top: 50px;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+.intro-lead-in {
+
 }
 
 header.masthead .intro-text .intro-heading {
