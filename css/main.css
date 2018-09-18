@@ -190,7 +190,7 @@ img::-moz-selection {
 header.masthead {
   text-align: center;
   color: white;
-  background-image: url("../img/about/backgroundpic.jpg");
+  background-image: url("../img/about/backgroundsize.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
@@ -212,6 +212,12 @@ header.masthead .intro-text .intro-lead-in {
   margin-bottom: 25px;
   margin-top: 50px;
   font-family: 'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+@media(max-width: 768px){
+  header.masthead .intro-text .intro-lead-in {
+      margin-top: 110px;
+  }
 }
 
 
