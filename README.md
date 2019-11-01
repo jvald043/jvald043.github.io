@@ -1,2 +1,2 @@
 ## jvald043.github.io
-Site dedicated to the Wedding of Jonathan and Ivet
+Site for Jonathan Valdivieso
