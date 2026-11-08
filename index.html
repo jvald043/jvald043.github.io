@@ -1,50 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jonathan Valdivieso — Software Engineer</title>
+  <meta name="author" content="Jonathan Valdivieso">
+  <meta name="description" content="Jonathan Valdivieso is a software engineer in Dallas–Fort Worth. Portfolio and projects.">
+  <meta property="og:title" content="Jonathan Valdivieso — Software Engineer">
+  <meta property="og:description" content="Software engineer in Dallas–Fort Worth. Portfolio and projects.">
+  <meta property="og:url" content="https://jvaldivieso.com/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23111'/><text x='50' y='66' font-size='48' font-family='Georgia,serif' fill='%23f2c14e' text-anchor='middle'>JV</text></svg>">
+  <style>
+    :root {
+      --bg: #f6f3ee;
+      --ink: #161616;
+      --muted: #5f5b55;
+      --line: #dcd6cc;
+      --card: #fffdf9;
+      --accent: #c8462b;
+      --accent-ink: #fff;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #121212;
+        --ink: #f1ede6;
+        --muted: #a39d94;
+        --line: #2c2a27;
+        --card: #1a1918;
+        --accent: #ef6a4c;
+        --accent-ink: #121212;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 24px; }
 
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="Test Site">
-	<meta name="author" content="Jonathan Valdivieso">
+    /* Nav */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 28px 0;
+    }
+    .mark {
+      font-family: var(--serif); font-size: 20px; font-weight: 700;
+      text-decoration: none; letter-spacing: -0.02em;
+    }
+    .mark span { color: var(--accent); }
+    nav ul { list-style: none; display: flex; gap: 24px; margin: 0; padding: 0; }
+    nav ul a { text-decoration: none; color: var(--muted); font-size: 15px; }
+    nav ul a:hover { color: var(--ink); }
 
-	<title>Jonathan Valdivieso Test Site</title>
+    /* Hero */
+    .hero { padding: 72px 0 88px; border-bottom: 1px solid var(--line); }
+    .eyebrow {
+      font-family: var(--mono); font-size: 13px; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--accent); margin: 0 0 20px;
+    }
+    h1 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(44px, 8vw, 84px); line-height: 1.02;
+      letter-spacing: -0.03em; margin: 0 0 28px;
+    }
+    .lede { font-size: 20px; color: var(--muted); max-width: 560px; margin: 0 0 36px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 20px; border-radius: 999px; text-decoration: none;
+      font-size: 15px; font-weight: 600; border: 1px solid var(--ink);
+      transition: transform .15s ease, background .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn.primary { background: var(--ink); color: var(--bg); }
+    .btn.ghost:hover { background: var(--card); }
 
-	<!-- Bootstrap core CSS -->
-	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    /* Sections */
+    section { padding: 80px 0; border-bottom: 1px solid var(--line); }
+    .section-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      margin-bottom: 36px;
+    }
+    h2 {
+      font-family: var(--serif); font-weight: 400; font-size: 36px;
+      letter-spacing: -0.02em; margin: 0;
+    }
+    .count { font-family: var(--mono); font-size: 13px; color: var(--muted); }
 
-	<!-- Custom fonts for this template -->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-	<link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-	<link href="https://fonts.googleapis.com/css?family=Meddon|Great+Vibes" rel="stylesheet">
+    /* Project card */
+    .projects { display: grid; gap: 24px; }
+    .project {
+      display: grid; grid-template-columns: 1fr 1.1fr; gap: 0;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: 18px; overflow: hidden;
+    }
+    .project-art {
+      background: var(--ink); color: var(--bg);
+      padding: 32px; display: flex; flex-direction: column; justify-content: center;
+      min-height: 300px; position: relative;
+    }
+    .setlist { font-family: var(--mono); font-size: 14px; list-style: none; margin: 0; padding: 0; }
+    .setlist li {
+      display: flex; gap: 14px; padding: 9px 0;
+      border-bottom: 1px dashed rgba(127,127,127,.35);
+      opacity: 0; transform: translateX(-6px);
+      animation: in .5s ease forwards;
+    }
+    .setlist li:nth-child(1) { animation-delay: .1s; }
+    .setlist li:nth-child(2) { animation-delay: .25s; }
+    .setlist li:nth-child(3) { animation-delay: .4s; }
+    .setlist li:nth-child(4) { animation-delay: .55s; }
+    .setlist li:nth-child(5) { animation-delay: .7s; }
+    .setlist li:last-child { border-bottom: 0; }
+    .setlist .n { color: var(--accent); width: 22px; }
+    .setlist .bar { flex: 1; height: 8px; margin-top: 8px; border-radius: 4px; background: rgba(127,127,127,.35); }
+    .art-label {
+      font-family: var(--mono); font-size: 11px; letter-spacing: .1em;
+      text-transform: uppercase; opacity: .6; margin-bottom: 16px;
+    }
+    @keyframes in { to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .setlist li { animation: none; opacity: 1; transform: none; }
+    }
 
-	<!-- Custom styles for this template -->
-	<link href="css/main.css" rel="stylesheet">
+    .project-body { padding: 36px; display: flex; flex-direction: column; }
+    .project-body h3 {
+      font-family: var(--serif); font-weight: 400; font-size: 30px;
+      letter-spacing: -0.02em; margin: 0 0 12px;
+    }
+    .project-body p { color: var(--muted); margin: 0 0 24px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; padding: 0; margin: 0 0 28px; }
+    .tags li {
+      font-family: var(--mono); font-size: 12px; padding: 4px 10px;
+      border: 1px solid var(--line); border-radius: 999px; color: var(--muted);
+    }
+    .links { margin-top: auto; display: flex; gap: 20px; }
+    .links a {
+      font-weight: 600; font-size: 15px; text-decoration: none;
+      border-bottom: 2px solid var(--accent); padding-bottom: 2px;
+    }
+    .links a:hover { color: var(--accent); }
 
+    /* About / contact */
+    .about p { font-size: 19px; max-width: 620px; margin: 0 0 16px; }
+    .contact-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; }
+    .contact-list li { border-top: 1px solid var(--line); }
+    .contact-list li:last-child { border-bottom: 1px solid var(--line); }
+    .contact-list a {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; text-decoration: none; font-size: 20px;
+    }
+    .contact-list a span:last-child { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+    .contact-list a:hover span:first-child { color: var(--accent); }
+
+    footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 720px) {
+      nav ul { gap: 16px; }
+      .hero { padding: 48px 0 64px; }
+      section { padding: 56px 0; }
+      .project { grid-template-columns: 1fr; }
+      .project-art { min-height: 0; }
+      .project-body { padding: 28px; }
+    }
+  </style>
 </head>
+<body>
+  <div class="wrap">
+    <nav>
+      <a class="mark" href="#top">jv<span>.</span></a>
+      <ul>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-<body id="page-top">
-	
-	<h1 class ='text-center'>Test Spotify redirect</h1>
+    <header class="hero" id="top">
+      <p class="eyebrow">Software Engineer · Dallas–Fort Worth</p>
+      <h1>Jonathan<br>Valdivieso</h1>
+      <p class="lede">I'm a software engineer in DFW who builds practical, well-crafted software. Here's what I've been working on.</p>
+      <div class="actions">
+        <a class="btn primary" href="#work">See my work</a>
+        <a class="btn ghost" href="https://github.com/jvald043" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </header>
 
+    <section id="work">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <span class="count">01 project</span>
+      </div>
 
-	<!-- Bootstrap core JavaScript -->
-	<script src="vendor/jquery/jquery.min.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <div class="projects">
+        <!-- Project: Setlist Generator.
+             To add another project, copy this whole <article> block and edit it. -->
+        <article class="project">
+          <div class="project-art" aria-hidden="true">
+            <div class="art-label">Tonight's set</div>
+            <ol class="setlist">
+              <li><span class="n">01</span><span class="bar" style="flex:.9"></span></li>
+              <li><span class="n">02</span><span class="bar" style="flex:.6"></span></li>
+              <li><span class="n">03</span><span class="bar" style="flex:.8"></span></li>
+              <li><span class="n">04</span><span class="bar" style="flex:.5"></span></li>
+              <li><span class="n">05</span><span class="bar" style="flex:.75"></span></li>
+            </ol>
+          </div>
+          <div class="project-body">
+            <h3>Setlist Generator</h3>
+            <p>Going to a concert? Enter an artist and the app pulls the songs they've been playing at recent shows from setlist.fm, then builds a Spotify playlist so you can learn the set before you go.</p>
+            <ul class="tags">
+              <li>Python</li>
+              <li>Flask</li>
+              <li>Spotify API</li>
+              <li>setlist.fm API</li>
+              <li>OAuth</li>
+            </ul>
+            <div class="links">
+              <a href="https://setlistgenerator.jvaldivieso.com" target="_blank" rel="noopener">Live demo ↗</a>
+              <a href="https://github.com/jvald043/FlaskSetlist" target="_blank" rel="noopener">Source ↗</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-	<!-- Plugin JavaScript -->
-	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <section id="about" class="about">
+      <div class="section-head"><h2>About</h2></div>
+      <p>I'm a software engineer based in the Dallas–Fort Worth area. I like turning everyday problems into tools that are simple to use, and music is one of the places I find them.</p>
+      <p>This site is new and growing. More projects are on the way.</p>
+    </section>
 
-	<!-- Contact form JavaScript -->
-	<script src="js/jqBootstrapValidation.js"></script>
-	<script src="js/contact_me.js"></script>
+    <section id="contact">
+      <div class="section-head"><h2>Get in touch</h2></div>
+      <ul class="contact-list">
+        <li><a href="https://github.com/jvald043" target="_blank" rel="noopener"><span>GitHub</span><span>@jvald043 ↗</span></a></li>
+        <!-- Optional: uncomment and fill in.
+        <li><a href="https://www.linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener"><span>LinkedIn</span><span>/in/YOUR-HANDLE ↗</span></a></li>
+        <li><a href="mailto:YOU@EXAMPLE.COM"><span>Email</span><span>YOU@EXAMPLE.COM</span></a></li>
+        -->
+      </ul>
+    </section>
 
-	<!-- Custom scripts for this template -->
-	<script src="js/main.js"></script>
-
+    <footer>© <span id="y">2026</span> Jonathan Valdivieso</footer>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
-
 </html>
