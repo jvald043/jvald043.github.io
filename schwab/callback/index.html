@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Schwab authorization</title>
+  <style>
+    :root { --bg:#f6f3ee; --ink:#161616; --muted:#5f5b55; --line:#dcd6cc; --card:#fffdf9; --accent:#c8462b; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#121212; --ink:#f1ede6; --muted:#a39d94; --line:#2c2a27; --card:#1a1918; --accent:#ef6a4c; }
+    }
+    body { margin:0; background:var(--bg); color:var(--ink);
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif; line-height:1.6; }
+    main { max-width:640px; margin:0 auto; padding:72px 24px; }
+    h1 { font-family:Georgia,serif; font-weight:400; font-size:36px; margin:0 0 12px; }
+    p { color:var(--muted); }
+    .box { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; margin:24px 0; }
+    textarea { width:100%; box-sizing:border-box; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:13px;
+      background:transparent; color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:10px; resize:vertical; }
+    button { margin-top:12px; padding:10px 18px; border-radius:999px; border:1px solid var(--ink);
+      background:var(--ink); color:var(--bg); font-weight:600; cursor:pointer; }
+    .err { color:var(--accent); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Schwab authorization</h1>
+    <p id="msg">Reading the response from Schwab…</p>
+    <div class="box" id="out" hidden>
+      <label for="url"><strong>Full redirect URL</strong> — paste this into your script:</label>
+      <textarea id="url" rows="5" readonly></textarea>
+      <button id="copy" type="button">Copy URL</button>
+    </div>
+    <p>This page runs only in your browser. Nothing is sent to or stored on this server, and the code expires within about 30 seconds.</p>
+  </main>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var msg = document.getElementById('msg');
+      if (params.get('error')) {
+        msg.className = 'err';
+        msg.textContent = 'Schwab returned an error: ' + params.get('error') +
+          (params.get('error_description') ? ' — ' + params.get('error_description') : '');
+        return;
+      }
+      if (!params.get('code')) {
+        msg.textContent = 'This is the OAuth callback for a personal Schwab API app. There is nothing to see here without an authorization code.';
+        return;
+      }
+      var full = window.location.href;
+      msg.textContent = 'Authorization succeeded. Copy the URL below quickly; the code is short-lived.';
+      document.getElementById('url').value = full;
+      document.getElementById('out').hidden = false;
+      document.getElementById('copy').addEventListener('click', function () {
+        var btn = this;
+        navigator.clipboard.writeText(full).then(function () { btn.textContent = 'Copied'; },
+          function () { document.getElementById('url').select(); });
+      });
+      // Remove the code from the address bar and history once captured.
+      history.replaceState(null, '', window.location.pathname);
+    })();
+  </script>
+</body>
+</html>
